@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
+import typography from "@tailwindcss/typography";
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -54,11 +56,14 @@ const config: Config = {
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
-        "space-grotesk": ["var(--font-space-grotesk)"],
+        " space-grotesk": ["var(--font-space-grotesk"],
       },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 
-export default config;
+export default {
+  config, // Assure-toi que `config` est bien défini avant
+  plugins: [animate, typography],
+};
